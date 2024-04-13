@@ -1,7 +1,27 @@
+import { firstName, lastName } from "./App";
+
 function ComponentC() {
   return (
     <>
-      <h1>Welcome developers</h1>
+      <firstName.Consumer>
+        {(fname) => {
+          return (
+            <>
+              <lastName.Consumer>
+                {(lname) => {
+                  return (
+                    <>
+                      <h1>
+                        Welcome developer {fname} {lname}
+                      </h1>
+                    </>
+                  );
+                }}
+              </lastName.Consumer>
+            </>
+          );
+        }}
+      </firstName.Consumer>
     </>
   );
 }
